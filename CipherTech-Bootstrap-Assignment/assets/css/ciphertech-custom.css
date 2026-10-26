@@ -1,0 +1,435 @@
+/*
+ * CipherTech visual layer
+ * Custom overrides for the BootstrapMade Mentor starter template.
+ * Original template CSS and Bootstrap vendor assets remain in place.
+ */
+
+:root {
+  --background-color: #F5EEE1;
+  --default-color: #41483E;
+  --heading-color: #252B24;
+  --accent-color: #D97648;
+  --surface-color: #FFFDF8;
+  --contrast-color: #FFFDF8;
+
+  --nav-color: #252B24;
+  --nav-hover-color: #D97648;
+  --nav-mobile-background-color: #FFFDF8;
+  --nav-dropdown-background-color: #FFFDF8;
+  --nav-dropdown-color: #252B24;
+  --nav-dropdown-hover-color: #D97648;
+
+  --default-font: "DM Sans", sans-serif;
+  --heading-font: "Space Grotesk", sans-serif;
+  --nav-font: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  letter-spacing: 0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.035em;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.header {
+  background: rgba(245, 238, 225, 0.97);
+  border-bottom: 1px solid rgba(37, 43, 36, 0.09);
+  box-shadow: 0 4px 24px rgba(37, 43, 36, 0.035);
+}
+
+.header .logo h1,
+.header .logo .sitename {
+  color: var(--heading-color);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.header .logo h1::after {
+  content: " ✳";
+  display: inline-block;
+  color: var(--accent-color);
+  font-size: 0.76em;
+  transform: rotate(-12deg);
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: var(--accent-color);
+}
+
+.btn-getstarted,
+.hero .btn-get-started,
+.btn-view-courses,
+.php-email-form button[type=submit] {
+  border-radius: 6px 16px 6px 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 4px 4px 0 rgba(37, 43, 36, 0.08);
+}
+
+.btn-getstarted:hover,
+.hero .btn-get-started:hover,
+.php-email-form button[type=submit]:hover {
+  transform: translateY(-2px);
+}
+
+.hero.dark-background {
+  --background-color: #252B24;
+  --default-color: #FFFDF8;
+  --heading-color: #FFFDF8;
+  --surface-color: #32382F;
+  --contrast-color: #FFFDF8;
+  background: #252B24;
+}
+
+.hero img {
+  filter: saturate(0.72);
+}
+
+.hero:before {
+  background: linear-gradient(90deg, rgba(37, 43, 36, 0.88), rgba(37, 43, 36, 0.52));
+}
+
+.section-title h2 {
+  color: var(--accent-color);
+  letter-spacing: 0.14em;
+}
+
+.section-title p {
+  letter-spacing: -0.04em;
+}
+
+.light-background {
+  --background-color: #EAE0CF;
+  --surface-color: #FFFDF8;
+}
+
+.dark-background {
+  --background-color: #252B24;
+  --default-color: #F5EEE1;
+  --heading-color: #FFFDF8;
+  --surface-color: #32382F;
+  --contrast-color: #FFFDF8;
+}
+
+/* Course cards and the new Bootstrap carousel */
+.cipher-learning-section {
+  background:
+    radial-gradient(circle at 8% 20%, rgba(220, 229, 209, 0.48), transparent 28%),
+    var(--background-color);
+}
+
+.cipher-section-intro {
+  max-width: 720px;
+  margin: 16px auto 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 0.98rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.8;
+}
+
+.ciphertech-carousel {
+  position: relative;
+  padding-bottom: 4.2rem;
+}
+
+.ciphertech-carousel .carousel-inner {
+  overflow: hidden;
+  padding: 8px 4px 20px;
+}
+
+.ciphertech-carousel .carousel-item {
+  transition: transform 0.65s ease-in-out;
+}
+
+.ciphertech-carousel .course-item {
+  width: 100%;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid rgba(37, 43, 36, 0.08);
+  border-radius: 5px 24px 5px 24px;
+  box-shadow: 0 12px 32px rgba(37, 43, 36, 0.055);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ciphertech-carousel .course-item:hover {
+  border-color: rgba(217, 118, 72, 0.42);
+  box-shadow: 0 17px 38px rgba(37, 43, 36, 0.12);
+}
+
+.ciphertech-carousel .course-item > img {
+  display: block;
+  width: 100%;
+  height: 218px;
+  object-fit: cover;
+  background: #DCE5D1;
+}
+
+.ciphertech-carousel .course-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 218px);
+  padding: 22px 22px 20px;
+}
+
+.ciphertech-carousel .course-card-meta {
+  gap: 10px;
+  align-items: flex-start !important;
+}
+
+.ciphertech-carousel .category {
+  margin: 0;
+  color: #50654C;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 0.09em;
+}
+
+.ciphertech-carousel .price {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 5px 9px;
+  border-radius: 4px 11px 4px 11px;
+  background: #F4C6A6;
+  color: #252B24;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.ciphertech-carousel .course-content h3 {
+  margin: 2px 0 12px;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.ciphertech-carousel .course-content h3 a {
+  color: var(--heading-color);
+}
+
+.ciphertech-carousel .course-content h3 a:hover {
+  color: var(--accent-color);
+}
+
+.ciphertech-carousel .description {
+  flex: 1;
+  margin-bottom: 22px;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.cipher-course-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(37, 43, 36, 0.12);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.cipher-course-bottom span {
+  color: #50654C;
+}
+
+.cipher-course-bottom span i {
+  margin-right: 4px;
+  color: var(--accent-color);
+}
+
+.cipher-course-bottom > a {
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+
+.cipher-course-bottom > a:hover {
+  color: var(--accent-color);
+}
+
+.cipher-carousel-control {
+  top: auto;
+  bottom: 0.05rem;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #252B24;
+  opacity: 1;
+}
+
+.cipher-carousel-control:hover,
+.cipher-carousel-control:focus {
+  background: #50654C;
+  opacity: 1;
+}
+
+.cipher-carousel-control .carousel-control-prev-icon,
+.cipher-carousel-control .carousel-control-next-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.ciphertech-carousel .carousel-indicators {
+  bottom: 0.3rem;
+  margin-bottom: 0;
+  gap: 4px;
+}
+
+.ciphertech-carousel .carousel-indicators [data-bs-target] {
+  width: 9px;
+  height: 9px;
+  margin: 0 3px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #9BAE91;
+  opacity: 1;
+}
+
+.ciphertech-carousel .carousel-indicators .active {
+  width: 24px;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+}
+
+.cipher-carousel-note {
+  margin: 12px auto 0;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.cipher-carousel-note i {
+  color: var(--accent-color);
+}
+
+/* Cards are kept readable when three columns collapse to two or one. */
+@media (max-width: 991.98px) {
+  .ciphertech-carousel .course-item > img {
+    height: 200px;
+  }
+
+  .ciphertech-carousel .course-content {
+    height: calc(100% - 200px);
+    padding: 19px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ciphertech-carousel .carousel-inner {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .ciphertech-carousel .course-item > img {
+    height: 190px;
+  }
+
+  .ciphertech-carousel .course-content {
+    height: auto;
+    min-height: 230px;
+  }
+
+  .ciphertech-carousel .course-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .cipher-carousel-note {
+    max-width: 85%;
+    line-height: 1.7;
+  }
+}
+
+/* Footer retains the BootstrapMade credit while matching the darker palette. */
+.footer.light-background {
+  --background-color: #252B24;
+  --default-color: #F5EEE1;
+  --heading-color: #FFFDF8;
+  --surface-color: #32382F;
+  --contrast-color: #FFFDF8;
+  color: var(--default-color);
+  background-color: var(--background-color);
+}
+
+.footer .footer-top {
+  border-color: rgba(245, 238, 225, 0.14);
+}
+
+.footer .footer-about .logo .sitename,
+.footer .footer-links h4,
+.footer .footer-newsletter h4 {
+  color: var(--heading-color);
+}
+
+.footer a:hover {
+  color: #EEA071;
+}
+
+.footer .credits,
+.footer .copyright {
+  color: #D0D0C5;
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Supporting page notes and sample content. */
+.cipher-pricing-note,
+.cipher-form-note,
+.cipher-contact-intro {
+  max-width: 850px;
+  margin: 0 auto 28px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 12px 12px 0;
+  background: #EAE0CF;
+  color: #41483E;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.cipher-contact-intro {
+  margin-bottom: 34px;
+}
+
+.cipher-contact-intro p,
+.cipher-form-note {
+  margin-bottom: 0;
+}
+
+.cipher-form-note {
+  background: #EAE0CF;
+}
+
+@media (max-width: 575.98px) {
+  .cipher-pricing-note,
+  .cipher-form-note,
+  .cipher-contact-intro {
+    padding: 13px 15px;
+    font-size: 0.82rem;
+  }
+}
